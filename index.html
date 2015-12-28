@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<title>Backbone + Handlebars</title>
+
+		<script src="lib/jquery/dist/jquery.min.js"></script>
+		<script src="lib/handlebars/handlebars.min.js"></script>
+		<script src="lib/underscore/underscore-min.js"></script>
+		<script src="lib/backbone/backbone-min.js"></script>
+		<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+
+		<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+
+		<script type='text/javascript' src='js/templates.js'></script>
+		<script type='text/javascript' src='js/dist/js/models.min.js'></script>
+		<script type='text/javascript' src='js/dist/js/collections.min.js'></script>
+		<script type='text/javascript' src='js/dist/js/views.min.js'></script>
+		<style type="text/css">
+			img {
+				border: 1px solid black;
+			}
+		</style>
+		<script>
+			$( document ).ready(function() {
+				var search_view = new LandingView({ el: $("#container") });
+			});
+		</script>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row" style="text-align:center; height:100px; background-color: #1E1E1E; color: #fff;">
+				<h1 style="font-family: Tahoma, sans-serif">Ec Shlire</h1>
+			</div>
+			<div class="row" style="height:10px; background-color: yellow;"></div>
+			<br><br>
+			<div class="row" style="text-align: center; padding: 0 10px; 0 60px;">
+				<div id="container"></div>
+			</div>
+		</div>
+	</body>
+</html>
