@@ -12,8 +12,19 @@ var LandingView = Backbone.View.extend({
       var peach = new Option({ name: "Peach", id: "peach", image_url: "http://img2.everychina.com/img/1b/bc/2ce0607f7e4756adb95cb769e89b-250x250c1-5d9d/frozen_peach_fresh_frozen_fruit_ad_fd_fruit.jpg"});
 
       var myOptions = new Options([apple, banana, durian, orange, pear, peach]);
-      console.log(myOptions);
 
       this.$el.html(this.template({options: myOptions.toJSON()}));  
     },
+    events: {
+      "click input[type=image]": "doSearch"
+    },
+    doSearch: function( event ){
+      event.preventDefault();
+      // Button clicked, you can access the element that was clicked with event.currentTarget
+      clicked_label = $(event.currentTarget).attr('id');
+      $("#container").empty();
+      var result_view = new ResultView({ el: $("#container"), clicked_label: clicked_label });
+      // $.mobile.changePage($(result_view.el), {transition: 'slide', changeHash:false});
+      
+    }
 });
