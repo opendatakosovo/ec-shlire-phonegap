@@ -12,7 +12,7 @@ var ResultView = Backbone.View.extend({
     },
     doBack: function(event){
       	var landing_view = new LandingView({ el: $("#container") });
-      	$.mobile.changePage($(landing_view), {transition: 'slide', changeHash:false});
+      	$.mobile.changeDiv($(landing_view.el), {transition: 'slide', changeHash:false});
     }
 });;
 var LandingView = Backbone.View.extend({
@@ -41,7 +41,7 @@ var LandingView = Backbone.View.extend({
       clicked_label = $(event.currentTarget).attr('id');
       $("#container").empty();
       var result_view = new ResultView({ el: $("#container"), clicked_label: clicked_label });
-      // $.mobile.changePage($(result_view.el), {transition: 'slide', changeHash:false});
+      $.mobile.changePage($(result_view.el), {transition: 'slide', changeHash:false});
       
     }
 });
