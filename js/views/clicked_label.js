@@ -12,6 +12,6 @@ var ResultView = Backbone.View.extend({
     },
     doBack: function(event){
       	var landing_view = new LandingView({ el: $("#container") });
-      	$.mobile.changeDiv($(landing_view.el), {transition: 'slide', changeHash:false});
+      	// $.mobile.changeDiv($(landing_view.el), {transition: 'slide', changeHash:false});
     }
 });

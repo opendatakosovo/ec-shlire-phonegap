@@ -24,7 +24,7 @@ var LandingView = Backbone.View.extend({
       clicked_label = $(event.currentTarget).attr('id');
       $("#container").empty();
       var result_view = new ResultView({ el: $("#container"), clicked_label: clicked_label });
-      $.mobile.changePage($(result_view.el), {transition: 'slide', changeHash:false});
+      // $.mobile.changePage($(result_view.el), {transition: 'slide', changeHash:false});
       
     }
 });
