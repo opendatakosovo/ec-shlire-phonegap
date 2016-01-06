@@ -5,7 +5,7 @@ var ResultView = Backbone.View.extend({
     },
     render: function(options){
 		var variables = { search_label: clicked_label };
-		console.log(options.clicked_label);
+		// console.log(options.clicked_label);
 	    this.$el.append(this.template(variables));
     },
     events: {
