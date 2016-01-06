@@ -5,13 +5,14 @@ var ResultView = Backbone.View.extend({
     },
     render: function(options){
 		var variables = { search_label: clicked_label };
+		console.log(options.clicked_label);
 	    this.$el.append(this.template(variables));
     },
     events: {
-      "click input[type=image]": "doBack"
+      "click .image": "doBack"
     },
     doBack: function(event){
-      	var landing_view = new LandingView({ el: $("#container") });
+      	new LandingView({ el: $("#container") });
       	// $.mobile.changeDiv($(landing_view.el), {transition: 'slide', changeHash:false});
     }
 });

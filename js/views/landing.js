@@ -16,15 +16,13 @@ var LandingView = Backbone.View.extend({
       this.$el.html(this.template({options: myOptions.toJSON()}));  
     },
     events: {
-      "click input[type=image]": "doSearch"
+      "click .image": "doSearch"
     },
     doSearch: function( event ){
-      event.preventDefault();
       // Button clicked, you can access the element that was clicked with event.currentTarget
       clicked_label = $(event.currentTarget).attr('id');
       $("#container").empty();
       var result_view = new ResultView({ el: $("#container"), clicked_label: clicked_label });
       // $.mobile.changePage($(result_view.el), {transition: 'slide', changeHash:false});
-      
     }
 });

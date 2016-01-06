@@ -27,6 +27,10 @@ module.exports = function(grunt) {
   		options: {
       		separator: ';\n',
     	},
+	    routers: {
+	      	src: ['js/routers/**/*.js'],
+	      	dest: 'js/routers.js'
+	    },
 	    models: {
 	      	src: ['js/models/**/*.js'],
 	      	dest: 'js/models.js'
