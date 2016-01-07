@@ -2,6 +2,6 @@ bower_components
 *.js~
 lib
 js/dist
-js.*.js
+js/*.js
 
 
