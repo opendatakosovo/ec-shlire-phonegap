@@ -15,12 +15,10 @@ var AppRouter = Backbone.Router.extend({
     },
 
     home:function () {
-        console.log('#home');
         this.changePage(new HomeView());
     },
 
     page1:function () {
-        console.log('#page1');
         this.changePage(new ResultView());
     },
 
@@ -28,7 +26,7 @@ var AppRouter = Backbone.Router.extend({
         $(page.el).attr('data-role', 'page');
         page.render();
         $('body').append($(page.el));
-        var transition = $.mobile.defaultPageTransition;
+        var transition = "slide";
         // We don't want to slide the first page
         if (this.firstPage) {
             transition = 'none';
@@ -36,11 +34,5 @@ var AppRouter = Backbone.Router.extend({
         }
         $.mobile.changePage($(page.el), {changeHash:false, transition: transition});
     }
-
 });
 
-$( document ).ready(function() {
-    app = new AppRouter();
-    Backbone.history.start();
-	// var search_view = new LandingView({ el: $("#container") });
-});

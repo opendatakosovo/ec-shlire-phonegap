@@ -1,28 +1,10 @@
 <html>
 	<head>
 		<title>Backbone + Handlebars</title>
-
-		<script src="lib/jquery/dist/jquery.min.js"></script>
-		<script src="lib/handlebars/handlebars.min.js"></script>
-		<script src="lib/underscore/underscore-min.js"></script>
-		<script src="lib/backbone/backbone-min.js"></script>
-		<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
-
-		<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
-
-
-		<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
-		<link rel="stylesheet"  href="http://demos.jquerymobile.com/1.3.2/css/themes/default/jquery.mobile-1.3.2.min.css">
-		<link rel="stylesheet" href="http://demos.jquerymobile.com/1.3.2/_assets/css/jqm-demos.css">
-		<link rel="stylesheet" href="http://demos.jquerymobile.com/1.3.2/examples/swipe/swipe-page.css">
-		<script src="http://demos.jquerymobile.com/1.3.2/js/jquery.js"></script>
-		<script src="http://demos.jquerymobile.com/1.3.2/_assets/js/index.js"></script>
-		<script src="http://demos.jquerymobile.com/1.3.2/js/jquery.mobile-1.3.2.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
+    	<link rel="stylesheet" href="static/css/jquery.mobile-1.4.5.css"/>
 		
-		<script type='text/javascript' src='js/templates.js'></script>
-		<script type='text/javascript' src='js/dist/js/models.min.js'></script>
-		<script type='text/javascript' src='js/dist/js/collections.min.js'></script>
-		<script type='text/javascript' src='js/dist/js/views.min.js'></script>
 		<style type="text/css">
 			body {
 			  font-family: "Exo", corbel, sans-serif;
@@ -34,29 +16,43 @@
 			}
 			@font-face{
 			  font-family: "Exo";
-			  src:url("static/Exo-Regular.otf");
+			  src:url("static/fonts/Exo-Regular.otf");
 			}
 
 			img {
 				border: 1px solid black;
 			}
+			.ui-block-a {
+				width: 50% !important;
+				float: left;
+			}
+			.ui-block-b {
+				width: 50% !important;
+				float: right;
+			}
 		</style>
-		<script>
-			$( document ).ready(function() {
-				var search_view = new LandingView({ el: $("#container") });
-			});
-		</script>
+
+		    <!-- The Scripts -->
+		<script type="text/template" id="home"></script>
+		<script type="text/template" id="page1"></script>
+
+		<script src="lib/jquery/dist/jquery.min.js"></script>
+	    <script src="static/js/jqm-config.js"></script>
+		<script src="static/js/jquery.mobile-1.4.5.js"></script>
+		<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+
+		<script src="lib/handlebars/handlebars.min.js"></script>
+		<script src="lib/underscore/underscore-min.js"></script>
+		<script src="lib/backbone/backbone-min.js"></script>
+		<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+		<script type='text/javascript' src='js/templates.js'></script>
+		<script type='text/javascript' src='js/dist/js/models.min.js'></script>
+		<script type='text/javascript' src='js/dist/js/collections.min.js'></script>
+		<script type='text/javascript' src='js/dist/js/views.min.js'></script>
+		<script type='text/javascript' src='js/dist/js/routers.min.js'></script>
 	</head>
-	<body>
-		<div class="container-fluid">
-			<div class="row" style="text-align:center; height:100px; background-color: #1E1E1E; color: #fff;">
-				<h1>Ec Shlire</h1>
-			</div>
-			<div class="row" style="height:10px; background-color: yellow;"></div>
-			<br><br>
-			<div class="row" style="text-align: center; padding: 0 10px; 0 60px;">
-				<div id="container"></div>
-			</div>
-		</div>
+	<body style="padding: 0;">
 	</body>
 </html>

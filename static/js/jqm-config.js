@@ -1,4 +1,4 @@
-$(document).bind("mobileinit", function () {
+$(document).on("mobileinit", function () {
     $.mobile.ajaxEnabled = false;
     $.mobile.linkBindingEnabled = false;
     $.mobile.hashListeningEnabled = false;
@@ -8,4 +8,10 @@ $(document).bind("mobileinit", function () {
     $('div[data-role="page"]').on('pagehide', function (event, ui) {
         $(event.currentTarget).remove();
     });
+});
+
+$( document ).ready(function() {
+	app = new AppRouter();
+	Backbone.history.start();
+	// var search_view = new LandingView({ el: $("#container") });
 });

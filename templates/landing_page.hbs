@@ -1,7 +1,18 @@
-{{#each options}}
-	<div class="col-sm-6">
-		<img class="img-circle image" style="border: 1px solid black;" id="{{ id }}" src="{{ image_url }}">
-		<h1>{{ name }}</h1>
-		<br><br><br>
+<div style="width:100%">
+	<div data-role="header" style="text-align:center; background-color: #1E1E1E; color: #fff;">
+		<h1>Ec Shlire</h1>
 	</div>
-{{/each}}
+	<div style="height:10px; background-color: yellow;"></div>
+	<br>
+	<div data-role="content" style="text-align:center;">
+		{{#each options}}
+			<div style="width:50%; float: left">
+				<a href="#page1" style="width:50%; ">
+					<img class="image img-circle" style="width:60%; border: 1px solid black;" id="{{ id }}" src="{{ image_url }}">
+					<h5>{{ name }}</h5>
+				</a>
+				<br>
+			</div>
+		{{/each}}
+	</div>
+</div>

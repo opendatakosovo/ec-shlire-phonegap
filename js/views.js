@@ -1,22 +1,17 @@
-var ResultView = Backbone.View.extend({
+window.ResultView = Backbone.View.extend({
 	template: JST["templates/apple.hbs"],
   	initialize: function(options){
       this.render(options);
     },
     render: function(options){
+    	console.log(options)
+		clicked_label = localStorage['label'];
 		var variables = { search_label: clicked_label };
-		console.log(options.clicked_label);
-	    this.$el.append(this.template(variables));
-    },
-    events: {
-      "click .image": "doBack"
-    },
-    doBack: function(event){
-      	new LandingView({ el: $("#container") });
-      	// $.mobile.changeDiv($(landing_view.el), {transition: 'slide', changeHash:false});
+        $(this.el).html(this.template(variables));
+        return this;
     }
 });;
-var LandingView = Backbone.View.extend({
+window.HomeView = Backbone.View.extend({
   template: JST["templates/landing_page.hbs"],
     initialize: function(){
       this.render();
@@ -31,16 +26,20 @@ var LandingView = Backbone.View.extend({
 
       var myOptions = new Options([apple, banana, durian, orange, pear, peach]);
 
-      this.$el.html(this.template({options: myOptions.toJSON()}));  
+      $(this.el).html(this.template({options: myOptions.toJSON()}));
+      // return this;
     },
     events: {
       "click .image": "doSearch"
     },
-    doSearch: function( event ){
+    doSearch: function( e ){
       // Button clicked, you can access the element that was clicked with event.currentTarget
-      clicked_label = $(event.currentTarget).attr('id');
-      $("#container").empty();
-      var result_view = new ResultView({ el: $("#container"), clicked_label: clicked_label });
-      // $.mobile.changePage($(result_view.el), {transition: 'slide', changeHash:false});
+      clicked_label = $(e.currentTarget).attr('id');
+
+      // Storing clicked option to session.
+      var label_session = localStorage['label'];
+      localStorage['label'] = clicked_label;
+      
+      var result_view = new ResultView({clicked_label: clicked_label });
     }
 });
