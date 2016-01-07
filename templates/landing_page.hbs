@@ -4,14 +4,14 @@
 	</div>
 	<div style="height:10px; background-color: yellow;"></div>
 	<br>
-	<div data-role="content" style="text-align:center;">
+	<div data-role="content" style="text-align:center; margin-top:-10px;">
 		{{#each options}}
 			<div style="width:50%; float: left">
-				<a href="#page1" style="width:50%; ">
-					<img class="image img-circle" style="width:60%; border: 1px solid black;" id="{{ id }}" src="{{ image_url }}">
+				<a href="#page1" style="width:50%;">
+					<img class="image img-circle" style="width:75%; border: 0.1em dotted black;" id="{{ id }}" src="{{ image_url }}">
 					<h5>{{ name }}</h5>
+					<br>
 				</a>
-				<br>
 			</div>
 		{{/each}}
 	</div>
