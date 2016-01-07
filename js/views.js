@@ -1,15 +1,3 @@
-window.ResultView = Backbone.View.extend({
-	template: JST["templates/apple.hbs"],
-  	initialize: function(options){
-      this.render(options);
-    },
-    render: function(options){
-		clicked_label = localStorage['label'];
-		var variables = { search_label: clicked_label };
-        $(this.el).html(this.template(variables));
-        return this;
-    }
-});;
 window.HomeView = Backbone.View.extend({
   template: JST["templates/landing_page.hbs"],
     initialize: function(){
@@ -40,5 +28,17 @@ window.HomeView = Backbone.View.extend({
       localStorage['label'] = clicked_label;
       
       var result_view = new ResultView({clicked_label: clicked_label });
+    }
+});;
+window.ResultView = Backbone.View.extend({
+	template: JST["templates/option_details.hbs"],
+  	initialize: function(options){
+      this.render(options);
+    },
+    render: function(options){
+		clicked_label = localStorage['label'];
+		var variables = { search_label: clicked_label };
+        $(this.el).html(this.template(variables));
+        return this;
     }
 });

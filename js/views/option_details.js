@@ -1,5 +1,5 @@
 window.ResultView = Backbone.View.extend({
-	template: JST["templates/apple.hbs"],
+	template: JST["templates/option_details.hbs"],
   	initialize: function(options){
       this.render(options);
     },
