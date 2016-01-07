@@ -3,7 +3,7 @@ this["JST"] = this["JST"] || {};
 this["JST"]["templates/apple.hbs"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var helper;
 
-  return "<div style=\"width:100%\">\n	<div data-role=\"header\" style=\"text-align:center; background-color: #1E1E1E; color: #fff;\">\n		<h1>Ec Shlire</h1>\n	</div>\n	<div style=\"height:10px; background-color: yellow;\"></div>\n	<br><br>\n	<div data-role=\"content\" style=\"text-align:center;\">\n		<div style=\"margin: 0 auto; width: 50%;\">\n			<a href=\"#\" data-icon=\"back\" style=\"width:50%\" class=\"back\">\n				<img class=\"img-circle\" style=\"width:40%\" src=\"https://image.freepik.com/free-icon/back-button-circle_318-67964.png\">\n			</a>\n			<h5>"
+  return "<div style=\"width:100%\">\n	<div data-role=\"header\" style=\"text-align:center; background-color: #1E1E1E; color: #fff;\">\n		<h1>Ec Shlirë</h1>\n	</div>\n	<div style=\"height:10px; background-color: yellow;\"></div>\n	<br><br>\n	<div data-role=\"content\" style=\"text-align:center;\">\n		<div style=\"margin: 0 auto; width: 50%;\">\n			<a href=\"#\" data-icon=\"back\" style=\"width:50%\" class=\"back\">\n				<img class=\"img-circle\" style=\"width:40%\" src=\"https://image.freepik.com/free-icon/back-button-circle_318-67964.png\">\n			</a>\n			<h5>"
     + container.escapeExpression(((helper = (helper = helpers.search_label || (depth0 != null ? depth0.search_label : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"search_label","hash":{},"data":data}) : helper)))
     + "</h5>\n		</div>\n	</div>\n</div>";
 },"useData":true});
@@ -21,7 +21,7 @@ this["JST"]["templates/landing_page.hbs"] = Handlebars.template({"1":function(co
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
 
-  return "<div style=\"width:100%\">\n	<div data-role=\"header\" style=\"text-align:center; background-color: #1E1E1E; color: #fff;\">\n		<h1>Ec Shlire</h1>\n	</div>\n	<div style=\"height:10px; background-color: yellow;\"></div>\n	<br>\n	<div data-role=\"content\" style=\"text-align:center;\">\n"
+  return "<div style=\"width:100%\">\n	<div data-role=\"header\" style=\"text-align:center; background-color: #1E1E1E; color: #fff;\">\n		<h1>Ec Shlirë</h1>\n	</div>\n	<div style=\"height:10px; background-color: yellow;\"></div>\n	<br>\n	<div data-role=\"content\" style=\"text-align:center;\">\n"
     + ((stack1 = helpers.each.call(depth0 != null ? depth0 : {},(depth0 != null ? depth0.options : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "	</div>\n</div>";
 },"useData":true});

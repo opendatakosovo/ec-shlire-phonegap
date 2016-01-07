@@ -4,7 +4,6 @@ window.ResultView = Backbone.View.extend({
       this.render(options);
     },
     render: function(options){
-    	console.log(options)
 		clicked_label = localStorage['label'];
 		var variables = { search_label: clicked_label };
         $(this.el).html(this.template(variables));
@@ -27,7 +26,7 @@ window.HomeView = Backbone.View.extend({
       var myOptions = new Options([apple, banana, durian, orange, pear, peach]);
 
       $(this.el).html(this.template({options: myOptions.toJSON()}));
-      // return this;
+      return this;
     },
     events: {
       "click .image": "doSearch"

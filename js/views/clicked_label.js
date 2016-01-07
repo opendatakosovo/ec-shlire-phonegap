@@ -4,7 +4,6 @@ window.ResultView = Backbone.View.extend({
       this.render(options);
     },
     render: function(options){
-    	console.log(options)
 		clicked_label = localStorage['label'];
 		var variables = { search_label: clicked_label };
         $(this.el).html(this.template(variables));

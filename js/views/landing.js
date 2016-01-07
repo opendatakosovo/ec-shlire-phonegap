@@ -14,7 +14,7 @@ window.HomeView = Backbone.View.extend({
       var myOptions = new Options([apple, banana, durian, orange, pear, peach]);
 
       $(this.el).html(this.template({options: myOptions.toJSON()}));
-      // return this;
+      return this;
     },
     events: {
       "click .image": "doSearch"

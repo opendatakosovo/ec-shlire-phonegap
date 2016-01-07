@@ -1723,19 +1723,19 @@ button.ui-btn-icon-notext,
 }
 .in {
 	-webkit-animation-timing-function: ease-out;
-	-webkit-animation-duration: 350ms;
+	-webkit-animation-duration: 450ms;
 	-moz-animation-timing-function: ease-out;
-	-moz-animation-duration: 350ms;
+	-moz-animation-duration: 450ms;
 	animation-timing-function: ease-out;
-	animation-duration: 350ms;
+	animation-duration: 450ms;
 }
 .out {
 	-webkit-animation-timing-function: ease-in;
-	-webkit-animation-duration: 225ms;
+	-webkit-animation-duration: 325ms;
 	-moz-animation-timing-function: ease-in;
-	-moz-animation-duration: 225ms;
+	-moz-animation-duration: 325ms;
 	animation-timing-function: ease-in;
-	animation-duration: 225ms;
+	animation-duration: 325ms;
 }
 @-webkit-keyframes fadein {
     from { opacity: 0; }
@@ -1930,11 +1930,11 @@ button.ui-btn-icon-notext,
 }
 .slide.out, .slide.in {
 	-webkit-animation-timing-function: ease-out;
-	-webkit-animation-duration: 350ms;
+	-webkit-animation-duration: 450ms;
 	-moz-animation-timing-function: ease-out;
-	-moz-animation-duration: 350ms;
+	-moz-animation-duration: 450ms;
 	animation-timing-function: ease-out;
-	animation-duration: 350ms;
+	animation-duration: 450ms;
 }
 .slide.out {
 	-webkit-transform: translate3d(-100%,0,0);
