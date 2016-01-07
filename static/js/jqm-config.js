@@ -13,5 +13,4 @@ $(document).on("mobileinit", function () {
 $( document ).ready(function() {
 	app = new AppRouter();
 	Backbone.history.start();
-	// var search_view = new LandingView({ el: $("#container") });
 });
