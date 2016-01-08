@@ -1,5 +1,14 @@
 
 ## Get Started
+
+###Dev environment prerequisites:
+
+Install [node.js](https://nodejs.org/en/) framework and  [npm](https://www.npmjs.com/) javascript package manager to able to setup project enivironment. When these tools are installled, go to project's root directory and procced installling project dependencies by executing ht efollowing comand:
+
+npm install
+
+###Run the project:
+
 1. In your Terminal, cd into the project's directory and run "grunt init".
 2. Still in your Terminal, run a simple server: e.g. python -m SimpleHTTPServer 8000
 3. In your browser, go to http://localhost:8000/
