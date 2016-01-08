@@ -53,5 +53,4 @@ module.exports = function(grunt) {
 
   grunt.registerTask('init', ['bower', 'handlebars', 'concat', 'uglify']);
   grunt.registerTask('default', ['handlebars', 'concat', 'uglify:myjs']);
-
 };
