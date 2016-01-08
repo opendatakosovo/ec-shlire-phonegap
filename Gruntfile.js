@@ -9,30 +9,19 @@ module.exports = function(grunt) {
 	    }
 	},
 	bower: {
-    	install: {
-	       //just run 'grunt bower:install' and you'll see files from your Bower packages in lib directory
-	    }
+		install: {
+
+		}
 	},
 	uglify: {
-    	lib: {
-      		files:[
-      			{
-	        		expand: true,
-	          		src: 'lib/**/*.js',
-	          		ext: '.min.js'
-	      		}
-	      	]
-    	},
-    	myjs: {
-      		files:[
-	      		{
-	        		expand: true,
-	          		src: 'js/*.js',
-	          		dest: 'js/dist',
-	          		ext: '.min.js'
-	      		},
-	      	]
-    	}
+		target: {
+	  		files:[{
+					expand: true,
+			  		src: 'js/*.js',
+			  		dest: 'js/dist',
+			  		ext: '.min.js'
+		    }]
+		}
   	},
   	concat: {
   		options: {
@@ -41,6 +30,10 @@ module.exports = function(grunt) {
 	    models: {
 	      	src: ['js/models/**/*.js'],
 	      	dest: 'js/models.js'
+	    },
+	    routers: {
+	      	src: ['js/routers/**/*.js'],
+	      	dest: 'js/routers.js'
 	    },
 	    collections: {
 	      	src: ['js/collections/**/*.js'],
@@ -57,6 +50,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-bower-task');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-clearcache');
 
   grunt.registerTask('init', ['bower', 'handlebars', 'concat', 'uglify']);
   grunt.registerTask('default', ['handlebars', 'concat', 'uglify:myjs']);
