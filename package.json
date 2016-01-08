@@ -1,6 +1,5 @@
 {
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-phonegap": "^0.15.3"
+    "grunt": "^0.4.5"
   }
 }
