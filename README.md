@@ -3,18 +3,14 @@
 
 ###Dev environment prerequisites:
 
-Install [node.js](https://nodejs.org/en/) framework and  [npm](https://www.npmjs.com/) javascript package manager to setup project enivironment. When these tools are installled, go to project's root directory and procced installling project dependencies by executing the following command:
+Install [node.js](https://nodejs.org/en/) framework and  [npm](https://www.npmjs.com/) javascript package manager to setup project enivironment.
 
-```sh
-$ npm install
-```
+###Install Dependencies and Run the Application:
 
-
-###Run Application:
-
-1. In your Terminal, cd into the project's directory and run "grunt init".
-2. Still in your Terminal, run a simple server: e.g. python -m SimpleHTTPServer 8000
-3. In your browser, go to http://localhost:8000/
+1. In your Terminal, cd into the project's directory and execute "npm install" to install nodejs modules
+2. Then run "grunt init" to initiate integration of javascript libraries into application.
+3. Still in your Terminal, run a simple server: e.g. python -m SimpleHTTPServer 8000
+4. In your browser, go to http://localhost:8000/
 
 ## Adding New Dependencies
 Adding new dependencies to bower.json will require the "grunt init" command to be executed.
