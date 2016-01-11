@@ -20,9 +20,6 @@ Any changes inside the 'js' and 'templates' folders will require the default "gr
 
 ## Technology
 - [Backbone](http://backbonejs.org/)
-- [Handlerbars](http://handlebarsjs.com/)
+- [Handlebars](http://handlebarsjs.com/)
 - [Bower](http://bower.io/)
 - [Grunt](http://gruntjs.com/)
-
-
-
