@@ -38,6 +38,14 @@ var AppRouter = Backbone.Router.extend({
     changePage:function (page) {
         $(page.el).attr('data-role', 'page');
         page.render();
+
+        $('.ui-page-theme-a').each(function(){
+            var page_class = $(this).attr("class");
+            if (page_class != "ui-page ui-page-theme-a ui-page-active"){
+                $(this).remove();
+            }
+        });
+
         $('body').append($(page.el));
         var transition = "flip";
 
