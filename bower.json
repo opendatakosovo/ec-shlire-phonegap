@@ -3,7 +3,7 @@
   "authors": [
     "georges <georges@opendatakosovo.org>"
   ],
-  "description": "A test project to learn how to build structured webapp with backbone and handlerbars",
+  "description": "Ec Shlire",
   "main": "index.html",
   "moduleType": [
     "globals"
@@ -16,6 +16,7 @@
     "node_modules",
     "bower_components",
     "test",
+    "lib",
     "tests"
   ],
   "dependencies": {
