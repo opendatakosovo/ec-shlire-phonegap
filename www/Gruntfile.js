@@ -25,7 +25,7 @@ module.exports = function(grunt) {
   	},
   	concat: {
   		options: {
-      		separator: ';\n',
+      		separator: ';\n'
     	},
 	    models: {
 	      	src: ['js/models/**/*.js'],

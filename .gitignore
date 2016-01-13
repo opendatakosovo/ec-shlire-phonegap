@@ -1,10 +1,10 @@
-lib
-npm-debug.log
+www/lib
+www/npm-debug.log
 .idea
-bower_components
-node_modules
-*.js~
-js/dist
-js/*.js
+www/bower_components
+www/node_modules
+www/*.js~
+www/js/dist
+www/js/*.js
 
 
