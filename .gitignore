@@ -6,5 +6,5 @@ www/node_modules
 www/*.js~
 www/js/dist
 www/js/*.js
-
+.DS_Storey
 
