@@ -5,7 +5,10 @@
 
 Install [node.js](https://nodejs.org/en/) framework and  [npm](https://www.npmjs.com/) javascript package manager to setup project environment.
 
-
+```sh
+$ sudo apt-get install nodejs
+```
+ 
 ### Installation
 
 You need phonegap and grunt installed globally:
