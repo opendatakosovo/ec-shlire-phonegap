@@ -3,7 +3,7 @@
 
 ###Dev environment prerequisites:
 
-Install [node.js](https://nodejs.org/en/) framework and  [npm](https://www.npmjs.com/) javascript package manager to setup project environment.
+Install [node.js](https://nodejs.org/en/) framework and  [npm](https://www.npmjs.com/) javascript package manager to setup project environment. Also in order to run the app in mobile phone we need PhoneGap developer tool, which can be downloaded from [Google Play Store](https://play.google.com/store/apps/details?id=com.adobe.phonegap.app) or [AppStore](https://itunes.apple.com/app/id843536693), for Android and IOS respectively.
 
 ```sh
 $ sudo apt-get install nodejs
