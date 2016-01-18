@@ -5,14 +5,48 @@
 	<div style="height:10px; background-color: yellow;"></div>
 	<br>
 	<div data-role="content" style="text-align:center; margin-top:-10px;">
-		{{#each options}}
-				<div style="width:50%; float: left; ">
-					<a href="#page1" style="width:50%;">
-						<img class="image img-circle" style="width:75%; border: 0.1em dotted black;" id="{{ id }}" src="{{ image_url }}">
-						<h5>{{ name }}</h5>
-					</a>
-					<hr>
-				</div>
-		{{/each}}
+        <div style="width:50%; float: left; ">
+            <a href="#reportPg" style="width:50%;">
+                <img class="image img-circle" style="width:75%; border: 0.1em dotted black;" id="{{ options.0.id }}" src="{{ options.0.image_url }}">
+                <h5>{{ options.0.name }}</h5>
+            </a>
+            <hr>
+        </div>
+        <div style="width:50%; float: left; ">
+            <a href="#page1" style="width:50%;">
+                <img class="image img-circle" style="width:75%; border: 0.1em dotted black;" id="{{ options.1.id }}" src="{{ options.1.image_url }}">
+                <h5>{{ options.1.name }}</h5>
+            </a>
+            <hr>
+        </div>
+        <div style="width:50%; float: left; ">
+            <a href="#page1" style="width:50%;">
+                <img class="image img-circle" style="width:75%; border: 0.1em dotted black;" id="{{ options.2.id }}" src="{{ options.2.image_url }}">
+                <h5>{{ options.2.ame }}</h5>
+            </a>
+            <hr>
+        </div>
+        <div style="width:50%; float: left; ">
+            <a href="#page1" style="width:50%;">
+                <img class="image img-circle" style="width:75%; border: 0.1em dotted black;" id="{{ options.3.id }}" src="{{ options.3.image_url }}">
+                <h5>{{ options.3.name }}</h5>
+            </a>
+            <hr>
+        </div>
+        <div style="width:50%; float: left; ">
+            <a href="#page1" style="width:50%;">
+                <img class="image img-circle" style="width:75%; border: 0.1em dotted black;" id="{{ options.4.id }}" src="{{ options.4.image_url }}">
+                <h5>{{ options.4.name }}</h5>
+            </a>
+            <hr>
+        </div>
+        <div style="width:50%; float: left; ">
+            <a href="#page1" style="width:50%;">
+                <img class="image img-circle" style="width:75%; border: 0.1em dotted black;" id="{{ options.5.id }}" src="{{ options.5.image_url }}">
+                <h5>{{ options.5.name }}</h5>
+            </a>
+            <hr>
+        </div>
+
 	</div>
 </div>

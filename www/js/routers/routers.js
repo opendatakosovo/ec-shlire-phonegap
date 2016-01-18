@@ -3,6 +3,10 @@ var AppRouter = Backbone.Router.extend({
     routes:{
         "":"home",
         "page1":"page1",
+        "reportPg": "reportPg",
+        "harassmentType": "harassmentType",
+        "generateReport": "generateReport",
+        "submitForm": "submitForm"
     },
 
     initialize:function () {
@@ -33,6 +37,22 @@ var AppRouter = Backbone.Router.extend({
 
     page1:function () {
         this.changePage(new ResultView());
+    },
+
+    reportPg:function () {
+        this.changePage(new ReportView());
+    },
+
+    harassmentType:function () {
+        this.changePage(new HarassmentTypeView());
+    },
+
+    generateReport:function () {
+        this.changePage(new GenerateReportView());
+    },
+
+    submitForm:function () {
+        this.changePage(new SubmitFormView());
     },
 
     changePage:function (page) {

@@ -4,14 +4,14 @@ window.HomeView = Backbone.View.extend({
       this.render();
     },
     render: function(){
-      var apple = new Option({ name: "Apple", id: "apple", image_url: "static/css/images/apple.jpg"});
-      var banana = new Option({ name: "Banana", id: "banana", image_url: "static/css/images/banana.jpg"});
-      var durian = new Option({ name: "Durian", id: "durian", image_url: "static/css/images/durian.jpg"});
-      var orange = new Option({ name: "Orange", id: "orange", image_url: "static/css/images/orange.jpg"});
-      var pear = new Option({ name: "Pear", id: "pear", image_url: "static/css/images/pear.jpg"});
-      var peach = new Option({ name: "Peach", id: "peach", image_url: "static/css/images/peach.jpg"});
+      var report = new Option({ name: "Report", id: "Report", image_url: "static/css/images/banner.png"});
+      var light = new Option({ name: "Light", id: "Light", image_url: "static/css/images/banner.png"});
+      var maps = new Option({ name: "Maps", id: "Maps", image_url: "static/css/images/banner.png"});
+      var analytics = new Option({ name: "Analytics", id: "Analytics", image_url: "static/css/images/banner.png"});
+      var settings = new Option({ name: "Settings", id: "Settings", image_url: "static/css/images/banner.png"});
+      var contact = new Option({ name: "Contact", id: "Contact", image_url: "static/css/images/banner.png"});
 
-      var myOptions = new Options([apple, banana, durian, orange, pear, peach]);
+      var myOptions = new Options([report, light, maps, analytics, settings, contact]);
 
       $(this.el).html(this.template({options: myOptions.toJSON()}));
       return this;
