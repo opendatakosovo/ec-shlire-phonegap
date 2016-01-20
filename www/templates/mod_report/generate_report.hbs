@@ -1,3 +1,31 @@
+<script >
+    $( document ).bind( "mobileinit", function() {
+
+        // Make your jQuery Mobile framework configuration changes here!
+        $.support.cors = true;
+        $.mobile.allowCrossDomainPages = true;
+    });
+    $(document).ready(function(){
+        $('#signUpButton').click(function(){
+
+            $.ajax({
+                type       : "POST",
+                url        : "http://0.0.0.0:5000/api/harassment/save",
+                crossDomain: true,
+                beforeSend : function() {$.mobile.loading('show')},
+                complete   : function() {$.mobile.loading('hide')},
+                data       : {username : 'endrit', password : 'bytyqi'},
+                dataType   : 'json',
+                success    : function(response) {
+                    alert('Works!');
+                },
+                error      : function() {
+                    alert('Now working!');
+                }
+            });
+        });
+    });
+</script>
 <div style="width:100%">
 	<div data-role="header" style="text-align:center; background-color: #1E1E1E; color: #fff;">
 		<h1>Ec Shlirë</h1>

@@ -79,3 +79,10 @@ window.GenerateReportView = Backbone.View.extend({
         return this;
     }
 });
+
+window.SubmitFormView = Backbone.View.extend({
+  initialize: function(options){
+      var formData = new SendData();
+      formData.fetch({data:{course_name:"hello"},type:'POST' });
+    }
+});
