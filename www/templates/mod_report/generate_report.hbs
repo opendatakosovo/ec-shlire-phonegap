@@ -7,22 +7,26 @@
     });
     $(document).ready(function(){
         $('#signUpButton').click(function(){
+            var xhr = $.ajax({
+                type: "POST",
+                url: "http://0.0.0.0:5000/api/harassment/save",
 
-            $.ajax({
-                type       : "POST",
-                url        : "http://0.0.0.0:5000/api/harassment/save",
-                crossDomain: true,
                 beforeSend : function() {$.mobile.loading('show')},
                 complete   : function() {$.mobile.loading('hide')},
-                data       : {username : 'endrit', password : 'bytyqi'},
+                data       : JSON.stringify({username : 'endrit', password : 'bytyqi'}),
                 dataType   : 'json',
-                success    : function(response) {
+                cache:false,
+                success: function(response) {
                     alert('Works!');
                 },
-                error      : function() {
-                    alert('Now working!');
+                error: function() {
+                    alert('Not working!');
                 }
             });
+
+            //kill the request
+            xhr.abort()
+
         });
     });
 </script>

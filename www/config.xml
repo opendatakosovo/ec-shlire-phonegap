@@ -15,10 +15,8 @@
     <author href="https://build.phonegap.com" email="support@phonegap.com">
         Hardeep Shoker
     </author>
+
     <content src="index.html" />
     <access origin="*" />
-    <access origin="http://127.0.0.1*"/>
     <access origin="http://0.0.0.0*" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <meta http-equiv="Content-Security-Policy" content="connect-src *;" />
 </widget>
