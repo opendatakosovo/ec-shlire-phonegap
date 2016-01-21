@@ -1,54 +1,56 @@
-<script >
-    $( document ).bind( "mobileinit", function() {
-
-        // Make your jQuery Mobile framework configuration changes here!
-        $.support.cors = true;
-        $.mobile.allowCrossDomainPages = true;
-    });
+<script>
     $(document).ready(function(){
-        $('#signUpButton').click(function(){
-            var xhr = $.ajax({
-                type: "POST",
-                url: "http://0.0.0.0:5000/api/harassment/save",
 
+        // Configure jquery to allow ajax requests through cross-domains
+        $.support.cors = true;
+
+        $('#reportButton').click(function(){
+
+            // Build Json
+            var data = {
+                profile_information: {
+                    'anonymity': true
+                },
+                description: $('#longDesc').val(),
+                harassment_type: $('#harassmentType').val(),
+                location: {
+                    harassment_location: $('#location').val(),
+                }
+            };
+
+            // Execute post request to the API server
+            $.ajax({
+                type: "POST",
+                url: "http://192.168.2.213:5000/api/harassment/save",
+                crossDomain: true,
                 beforeSend : function() {$.mobile.loading('show')},
                 complete   : function() {$.mobile.loading('hide')},
-                data       : JSON.stringify({username : 'endrit', password : 'bytyqi'}),
-                dataType   : 'json',
-                cache:false,
-                success: function(response) {
-                    alert('Works!');
+                contentType: "application/json; charset=UTF-8", // charset is to properly retrieve special  characters
+                data: JSON.stringify(data),
+                success: function(respData){
+                    alert("Hoooorray!!!");
                 },
-                error: function() {
-                    alert('Not working!');
+                error      : function(error) {
+                    alert(JSON.stringify(error));
                 }
             });
-
-            //kill the request
-            xhr.abort()
-
         });
     });
 </script>
-<div style="width:100%">
+<div style="width:100%" id="index">
 	<div data-role="header" style="text-align:center; background-color: #1E1E1E; color: #fff;">
 		<h1>Ec Shlirë</h1>
 	</div>
 	<div style="height:10px; background-color: yellow;"></div>
 	<br><br>
 	<div data-role="content" style="text-align:center;">
-        {{location}}
+
         <form class="form-horizontal" role="form">
+            <input type="hidden" id="location" value="{{location}}">
+            <input type="hidden" id="harassmentType" value="{{harassment_type}}">
             <div class="form-group">
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" id="shortDesc" name="shortDesc" placeholder="Short Description"/>
-                    <span class="help-block hidden"></span>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-lg-10">
-                    <input type="textarea" class="form-control" id="longDesc" name="longDesc" placeholder="Long Description"/>
-                    <span class="help-block hidden"></span>
+                    <textarea id="longDesc" class="form-control" name="longDesc" rows="30" cols="17" placeholder="Long Description"></textarea>
                 </div>
             </div>
             <div class="form-group">
@@ -58,7 +60,7 @@
             </div>
             <div class="form-group">
                 <div class="col-lg-offset-2 col-lg-10">
-                    <button type="button" id="signUpButton" class="btn btn-success">Report!</button>
+                    <button type="button" id="reportButton" class="btn btn-success">Report!</button>
                 </div>
             </div>
         </form>
