@@ -1,18 +1,28 @@
+<script>
+    $(document).ready(function(){
+        $('#continueBtn').click(function(){
+            var selected = [];
+            $('.harassTypes .checkbox-wrapper input:checked').each(function() {
+                selected.push($(this).attr('name'));
+            });
+            localStorage.setItem("harassTypes", selected);
+        });
+    });
+</script>
 <div style="width:100%">
 	<div data-role="header" style="text-align:center; background-color: #1E1E1E; color: #fff;">
 		<h1>Ec Shlirë</h1>
 	</div>
 	<div style="height:10px; background-color: yellow;"></div>
 	<br>
-	<div data-role="content" style="text-align:center; margin-top:-10px;">
-		{{#each options}}
-				<div style="width:50%; float: left; ">
-					<a href="#generateReport" style="width:50%;">
-						<img class="image img-circle" style="width:75%; border: 0.1em dotted black;" id="{{ id }}" src="{{ image_url }}">
-						<h5>{{ name }}</h5>
-					</a>
-					<hr>
-				</div>
-		{{/each}}
+	<div data-role="content" class="harassTypes" style="text-align:center; margin-top:-10px;">
+        {{#each options}}
+        <div class="checkbox-wrapper" style="width:50%; float: left; ">
+            <input type="checkbox" name="{{ name }}"/>
+            <img style="width:75%; border: 0.1em dotted black;" id="{{ id }}" src="{{ image_url }}"/>
+            <h5>{{ name }}</h5>
+        </div>
+        {{/each}}
 	</div>
+    <a type="button" class="btn btn-primary" href="#generateReport" id="continueBtn">Continue</a>
 </div>

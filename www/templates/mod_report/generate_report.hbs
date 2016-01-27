@@ -5,14 +5,14 @@
         $.support.cors = true;
 
         $('#reportButton').click(function(){
-
+            var harassType = localStorage.getItem('harassTypes');
             // Build Json
             var data = {
                 profile_information: {
                     'anonymity': true
                 },
                 description: $('#longDesc').val(),
-                harassment_type: $('#harassmentType').val(),
+                harassment_type: harassType,
                 location: {
                     harassment_location: $('#location').val(),
                 }
@@ -21,7 +21,7 @@
             // Execute post request to the API server
             $.ajax({
                 type: "POST",
-                url: "http://192.168.2.213:5000/api/harassment/save",
+                url: "http://192.168.2.212:5000/api/harassment/save",
                 crossDomain: true,
                 beforeSend : function() {$.mobile.loading('show')},
                 complete   : function() {$.mobile.loading('hide')},
@@ -30,12 +30,14 @@
                 success: function(respData){
                     alert("Hoooorray!!!");
                 },
-                error      : function(error) {
+                error: function(error) {
                     alert(JSON.stringify(error));
                 }
             });
+
         });
     });
+
 </script>
 <div style="width:100%" id="index">
 	<div data-role="header" style="text-align:center; background-color: #1E1E1E; color: #fff;">
@@ -44,10 +46,10 @@
 	<div style="height:10px; background-color: yellow;"></div>
 	<br><br>
 	<div data-role="content" style="text-align:center;">
-
+        {{harassType}}
         <form class="form-horizontal" role="form">
             <input type="hidden" id="location" value="{{location}}">
-            <input type="hidden" id="harassmentType" value="{{harassment_type}}">
+            <input type="hidden" id="harassmentType" value="">
             <div class="form-group">
                 <div class="col-lg-10">
                     <textarea id="longDesc" class="form-control" name="longDesc" rows="30" cols="17" placeholder="Long Description"></textarea>

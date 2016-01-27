@@ -48,18 +48,6 @@ window.HarassmentTypeView = Backbone.View.extend({
 
       $(this.el).html(this.template({options: myOptions.toJSON()}));
       return this;
-    },
-    events: {
-      "click .image": "doSearch"
-    },
-    doSearch: function( e ){
-      // Button clicked, you can access the element that was clicked with event.currentTarget
-      clicked_label = $(e.currentTarget).attr('id');
-
-      // Storing clicked option to session.
-      localStorage['harassType'] = clicked_label;
-
-      var result_view = new GenerateReportView({clicked_label: clicked_label });
     }
 });
 
