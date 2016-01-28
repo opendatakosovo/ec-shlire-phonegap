@@ -20,6 +20,8 @@
     "tests"
   ],
   "dependencies": {
+    "datepicker-fr": "~1.11.4",
+    "bootstrap-datepicker": "~1.5.1",
     "handlebars": "~4.0.5",
     "backbone": "~1.2.3",
     "jquery": "~2.1.4",

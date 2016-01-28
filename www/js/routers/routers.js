@@ -6,7 +6,8 @@ var AppRouter = Backbone.Router.extend({
         "reportPg": "reportPg",
         "harassmentType": "harassmentType",
         "generateReport": "generateReport",
-        "submitForm": "submitForm"
+        "submitForm": "submitForm",
+        "settingsPage": "settingsPage"
     },
 
     initialize:function () {
@@ -17,17 +18,6 @@ var AppRouter = Backbone.Router.extend({
 		    self.back = true;
 		    window.history.back();
 		});
-
-  //      $(window).on("navigate", function (event, data) {
-		//     var direction = data.state.direction;
-		//     if ( !! direction) {
-		//         alert(direction);
-		// 	    event.preventDefault();
-		// 	    self.back = true;
-		// 	    window.history.back();
-		//     }
-		// });
-
         this.firstPage = true;
     },
 
@@ -51,9 +41,11 @@ var AppRouter = Backbone.Router.extend({
         this.changePage(new GenerateReportView());
     },
 
-    submitForm:function () {
-        this.changePage(new SubmitFormView());
+    settingsPage:function () {
+        this.changePage(new SettingsView());
     },
+
+
 
     changePage:function (page) {
         $(page.el).attr('data-role', 'page');
