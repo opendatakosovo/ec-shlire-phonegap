@@ -20,6 +20,7 @@
     "tests"
   ],
   "dependencies": {
+    "highcharts": "~4.2.1",
     "datepicker-fr": "~1.11.4",
     "bootstrap-datepicker": "~1.5.1",
     "handlebars": "~4.0.5",

@@ -1,0 +1,72 @@
+<script>
+    $(document).ready(function(){
+        $(function () {
+            $('#chartDiv').highcharts({
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    type: 'pie'
+                },
+                title: {
+                    text: 'Browser market shares January, 2015 to May, 2015'
+                },
+                tooltip: {
+                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                            style: {
+                                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                            }
+                        }
+                    }
+                },
+                series: [{
+                    name: 'Brands',
+                    colorByPoint: true,
+                    data: [{
+                        name: 'Microsoft Internet Explorer',
+                        y: 56.33
+                    }, {
+                        name: 'Chrome',
+                        y: 24.03,
+                        sliced: true,
+                        selected: true
+                    }, {
+                        name: 'Firefox',
+                        y: 10.38
+                    }, {
+                        name: 'Safari',
+                        y: 4.77
+                    }, {
+                        name: 'Opera',
+                        y: 0.91
+                    }, {
+                        name: 'Proprietary or Undetectable',
+                        y: 0.2
+                    }]
+                }]
+            });
+        });
+    });
+</script>
+<div style="width:100%">
+	<div data-role="header" style="text-align:center; background-color: #1E1E1E; color: #fff;">
+		<h1>Ec Shlirë</h1>
+	</div>
+	<div style="height:10px; background-color: yellow;"></div>
+	<br><br>
+	<div data-role="content" style="text-align:center;">
+        <a href="#" data-icon="back" style="width:50%;float: left;">
+            <i class="glyphicon glyphicon-chevron-left"></i><b>Back</b>
+        </a>
+        <br><br>
+        <div id="chartDiv" style="margin: 0 auto"></div>
+    </div>
+</div>

@@ -7,7 +7,8 @@ var AppRouter = Backbone.Router.extend({
         "harassmentType": "harassmentType",
         "generateReport": "generateReport",
         "submitForm": "submitForm",
-        "settingsPage": "settingsPage"
+        "settingsPage": "settingsPage",
+        "analyticsPage": "analyticsPage"
     },
 
     initialize:function () {
@@ -43,6 +44,10 @@ var AppRouter = Backbone.Router.extend({
 
     settingsPage:function () {
         this.changePage(new SettingsView());
+    },
+
+    analyticsPage:function () {
+        this.changePage(new AnalyticsView());
     },
 
 

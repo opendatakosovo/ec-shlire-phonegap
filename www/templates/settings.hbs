@@ -1,5 +1,14 @@
 <script>
     $(document).ready(function(){
+
+        // get values form local storage
+        var country = localStorage.getItem('country');
+        var gender = localStorage.getItem('gender');
+        var ethnicity = localStorage.getItem('ethnicity');
+        var birthDay = localStorage.getItem('birthDay');
+        var region = localStorage.getItem('region');
+        var language = localStorage.getItem('language');
+
         var selected_option = $('#country option:selected').text();
         if(selected_option == "Kosovo"){
             $('.region').show();
@@ -9,14 +18,89 @@
         }
 
         $('#country').change(function(){
-            var selected_option = $('#country option:selected').text();
+            var selected_option = $('#country option:selected').val();
             if(selected_option == "Kosovo"){
                 $('.region').show();
             }
             else {
                 $('.region').hide();
             }
+            var country = $('#country option:selected').val();
+            localStorage.setItem('country', country);
         });
+
+        $('#gender').change(function(){
+            var gender = $('#gender option:selected').val();
+            localStorage.setItem('country', gender);
+        });
+
+        $('#ethnicity').change(function(){
+
+            var ethnicity = $('#ethnicity option:selected').val();
+            localStorage.setItem('ethnicity', ethnicity);
+        });
+
+
+        $('#region').change(function(){
+
+            var region = $('#region option:selected').val();
+            localStorage.setItem('region', region);
+        });
+
+        $('#language').change(function(){
+            var language = $('#language option:selected').val();
+            localStorage.setItem('language', language);
+        });
+
+
+        if(country == undefined){
+            country = $('#country option:selected').text();
+            localStorage.setItem('country', country);
+        }else {
+            country = localStorage.getItem('country');
+            $('#country').val(country);
+        }
+
+        if(gender == undefined){
+            gender = $('#gender option:selected').text();
+            localStorage.setItem('gender', gender);
+        }else {
+            gender = localStorage.getItem('gender');
+            $('#gender').val(gender);
+        }
+
+        if(ethnicity == undefined){
+            ethnicity = $('#ethnicity option:selected').text();
+            localStorage.setItem('ethnicity', ethnicity);
+        }else {
+            ethnicity = localStorage.getItem('ethnicity');
+            $('#ethnicity').val(ethnicity);
+        }
+
+        if(birthDay == undefined){
+            birthDay = $('#birthDate').val();
+            localStorage.setItem('birthDate', birthDay);
+        }else {
+            birthDay = localStorage.getItem('birthDate');
+            $('#birthDate').val(birthDay);
+        }
+
+        if(region == undefined){
+            region = $('#region option:selected').text();
+            localStorage.setItem('region', region);
+        }else {
+            region = localStorage.getItem('region');
+            $('#region').val(region);
+        }
+
+        if(language == undefined){
+            language = $('#language option:selected').text();
+            localStorage.setItem('language', language);
+        }else {
+            language = localStorage.getItem('language');
+            $('#language').val(language);
+        }
+
     });
 </script>
 <div style="width:100%">
@@ -152,7 +236,7 @@
                 <option value="KI">Kiribati</option>
                 <option value="KP">Korea, Democratic People's Republic of</option>
                 <option value="KR">Korea, Republic of</option>
-                <option value="KS" selected>Kosovo</option>
+                <option value="KS">Kosovo</option>
                 <option value="KW">Kuwait</option>
                 <option value="KG">Kyrgyzstan</option>
                 <option value="LA">Lao People's Democratic Republic</option>
@@ -287,7 +371,7 @@
         </div>
         <div class="form-group">
             <label>Gender</label>
-            <select class="form-control">
+            <select class="form-control" id="gender">
                 <option value="Female">Female</option>
                 <option value="Male">Male</option>
                 <option value="Other">Other</option>
@@ -295,7 +379,7 @@
         </div>
         <div class="form-group">
             <label>Ethnicity</label>
-            <select class="form-control">
+            <select class="form-control" id="ethnicity">
                 <option>Albanian</option>
                 <option>Bosnian</option>
                 <option>Romani</option>
@@ -306,11 +390,11 @@
         </div>
         <div class="form-group">
             <label>Date of birth</label>
-            <input id="birthDate" class="form-control">
+            <input id="birthDate" class="form-control" id="birthDay">
         </div>
         <div class="form-group region">
             <label>Region/City</label>
-            <select class="form-control">
+            <select class="form-control" id="region">
                 <option>Deçan</option>
                 <option>Dragash</option>
                 <option>Ferizaj</option>
@@ -352,7 +436,7 @@
         </div>
         <div class="form-group">
             <label>Language</label>
-            <select class="form-control">
+            <select class="form-control" id="language">
                 <option value="Shqip">Shqip</option>
                 <option value="Srpski">Srpski</option>
                 <option value="English">English</option>
