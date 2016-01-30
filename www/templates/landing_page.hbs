@@ -1,52 +1,7 @@
-<div style="width:100%">
-	<div data-role="header" style="text-align:center; background-color: #1E1E1E; color: #fff;">
-		<h1>Ec Shlirë</h1>
-	</div>
-	<div style="height:10px; background-color: yellow;"></div>
-	<br>
-	<div data-role="content" style="text-align:center; margin-top:-10px;">
-        <div style="width:50%; float: left; ">
-            <a href="#reportPg" style="width:50%;">
-                <img class="image img-circle" style="width:75%; border: 0.1em dotted black;" id="{{ options.0.id }}" src="{{ options.0.image_url }}">
-                <h5>{{ options.0.name }}</h5>
-            </a>
-            <hr>
-        </div>
-        <div style="width:50%; float: left; ">
-            <a href="#page1" style="width:50%;">
-                <img class="image img-circle" style="width:75%; border: 0.1em dotted black;" id="{{ options.1.id }}" src="{{ options.1.image_url }}">
-                <h5>{{ options.1.name }}</h5>
-            </a>
-            <hr>
-        </div>
-        <div style="width:50%; float: left; ">
-            <a href="#page1" style="width:50%;">
-                <img class="image img-circle" style="width:75%; border: 0.1em dotted black;" id="{{ options.2.id }}" src="{{ options.2.image_url }}">
-                <h5>{{ options.2.name }}</h5>
-            </a>
-            <hr>
-        </div>
-        <div style="width:50%; float: left; ">
-            <a href="#analyticsPage" style="width:50%;">
-                <img class="image img-circle" style="width:75%; border: 0.1em dotted black;" id="{{ options.3.id }}" src="{{ options.3.image_url }}">
-                <h5>{{ options.3.name }}</h5>
-            </a>
-            <hr>
-        </div>
-        <div style="width:50%; float: left; ">
-            <a href="#settingsPage" style="width:50%;">
-                <img class="image img-circle" style="width:75%; border: 0.1em dotted black;" id="{{ options.4.id }}" src="{{ options.4.image_url }}">
-                <h5>{{ options.4.name }}</h5>
-            </a>
-            <hr>
-        </div>
-        <div style="width:50%; float: left; ">
-            <a href="#page1" style="width:50%;">
-                <img class="image img-circle" style="width:75%; border: 0.1em dotted black;" id="{{ options.5.id }}" src="{{ options.5.image_url }}">
-                <h5>{{ options.5.name }}</h5>
-            </a>
-            <hr>
-        </div>
-
-	</div>
+<div>
+    {{#each options}}
+        <a href="#{{this.id}}">
+            <img src="{{this.image_url}}" class="img-responsive" />
+        </a>
+    {{/each}}
 </div>

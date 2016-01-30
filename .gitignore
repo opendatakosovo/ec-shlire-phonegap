@@ -1,3 +1,4 @@
+node_modules
 www/lib
 www/npm-debug.log
 .idea
