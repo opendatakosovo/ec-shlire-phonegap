@@ -8,6 +8,14 @@ Install [node.js](https://nodejs.org/en/) framework and  [npm](https://www.npmjs
 ```sh
 $ sudo apt-get install nodejs
 ```
+
+In Ubuntu, if you get the error "Nodejs : Depends: rlwrap but it is not installable," then you need to update Ubuntu's APT repository to include the universe repository":
+
+```sh
+sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
+sudo apt-get update
+sudo apt-get install nodejs
+```
  
 ### Installation
 
