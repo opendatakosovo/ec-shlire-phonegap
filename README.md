@@ -6,6 +6,11 @@ These are instructions for getting started on Debian and Ubuntu based Linux dist
 
 In order to test a PhoneGap app in your mobile phone, you need **PhoneGap Developer**. Get it from the [Google Play Store](https://play.google.com/store/apps/details?id=com.adobe.phonegap.app) for Android devices or from the [iTunes App Store](https://itunes.apple.com/app/id843536693) for iOS devices.
 
+Install Git:
+```sh
+sudo apt-get install git
+```
+
 Install Node.js:
 ```sh
 curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
