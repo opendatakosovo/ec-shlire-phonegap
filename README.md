@@ -1,43 +1,52 @@
 
 ## Get Started
+These are instructions for getting started on Debian and Ubuntu based Linux distributions.
 
 ###Dev environment prerequisites:
 
 Install [node.js](https://nodejs.org/en/) framework and  [npm](https://www.npmjs.com/) javascript package manager to setup project environment. Also in order to run the app in mobile phone we need PhoneGap developer tool, which can be downloaded from [Google Play Store](https://play.google.com/store/apps/details?id=com.adobe.phonegap.app) or [AppStore](https://itunes.apple.com/app/id843536693), for Android and IOS respectively.
 
 ```sh
-$ sudo apt-get install nodejs
+curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+sudo apt-get install -y nodejs
 ```
 
-In Ubuntu, if you get the error "Nodejs : Depends: rlwrap but it is not installable," then you need to update Ubuntu's APT repository to include the universe repository":
-
+If you get the error "Nodejs : Depends: rlwrap but it is not installable," just download and install the rlwrap package:
 ```sh
-sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
-sudo apt-get update
-sudo apt-get install nodejs
+wget http://cz.archive.ubuntu.com/ubuntu/pool/universe/r/rlwrap/rlwrap_0.34-2_amd64.deb
+sudo dpkg -i rlwrap_0.34-2_amd64.deb
+sudo apt-get install -y nodejs
 ```
+
  
 ### Installation
 
 You need phonegap and grunt installed globally:
 
-
 ```sh
-$ npm install -g phonegap
+npm install -g phonegap
 ```
 
 ```sh
-$ npm install -g grunt-cli
-```
-
-```sh
-$ git clone https://github.com/opendatakosovo/ec-shlire.git
-$ cd ec-shlire/www
-$ npm install
+npm install -g grunt-cli
 ```
 
 ###Run the Application:
 
+First, cd into your dev folder. If you don't have a dev folder yet, then create one:
+```sh
+mkdir dev
+cd dev
+```
+
+Now, retrieve the project from GitHub:
+```sh
+git clone https://github.com/opendatakosovo/ec-shlire-phonegap.git
+cd ec-shlire-phonegap/www
+npm install
+```
+
+Install and run it:
 ```sh
 $ grunt init
 $ phonegap serve
