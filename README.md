@@ -4,8 +4,9 @@ These are instructions for getting started on Debian and Ubuntu based Linux dist
 
 ###Dev environment prerequisites:
 
-Install [node.js](https://nodejs.org/en/) framework and  [npm](https://www.npmjs.com/) javascript package manager to setup project environment. Also in order to run the app in mobile phone we need PhoneGap developer tool, which can be downloaded from [Google Play Store](https://play.google.com/store/apps/details?id=com.adobe.phonegap.app) or [AppStore](https://itunes.apple.com/app/id843536693), for Android and IOS respectively.
+In order to test a PhoneGap app in your mobile phone, you need **PhoneGap Developer**. Get it from the [Google Play Store](https://play.google.com/store/apps/details?id=com.adobe.phonegap.app) for Android devices or from the [iTunes App Store](https://itunes.apple.com/app/id843536693) for iOS devices.
 
+Install Node.js:
 ```sh
 curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
 sudo apt-get install -y nodejs
@@ -24,11 +25,11 @@ sudo apt-get install -y nodejs
 You need phonegap and grunt installed globally:
 
 ```sh
-npm install -g phonegap
+sudo npm install -g phonegap
 ```
 
 ```sh
-npm install -g grunt-cli
+sudo npm install -g grunt-cli
 ```
 
 ###Run the Application:
@@ -59,10 +60,10 @@ Adding new dependencies to bower.json will require the "grunt init" command to b
 Any changes inside the 'js' and 'templates' folders will require the default "grunt" command to be executed.
 
 ## Technology
+- [PhoneGap] (http://phonegap.com/)
 - [Backbone](http://backbonejs.org/)
 - [Handlebars](http://handlebarsjs.com/)
 - [Bower](http://bower.io/)
 - [Grunt](http://gruntjs.com/)
-- [PhoneGap](http://phonegap.com)
 
 **Open Source Software, Hell Yeah!**
