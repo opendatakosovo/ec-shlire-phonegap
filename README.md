@@ -54,8 +54,8 @@ npm install
 
 Install and run it:
 ```sh
-$ grunt init
-$ phonegap serve
+grunt init
+phonegap serve
 ```
 
 ## Adding New Dependencies
