@@ -3,7 +3,13 @@
 
         // Configure jquery to allow ajax requests through cross-domains
         $.support.cors = true;
-
+        var country = localStorage.getItem('country');
+        var gender = localStorage.getItem('gender');
+        var ethnicity = localStorage.getItem('ethnicity');
+        var birthDay = localStorage.getItem('birthDay');
+        var region = localStorage.getItem('region');
+        var language = localStorage.getItem('language');
+        //alert([country, gender, ethnicity, birthDay, region, language].toString());
         $('#reportButton').click(function(){
             var harassType = localStorage.getItem('harassTypes');
             // Build Json
@@ -40,31 +46,54 @@
             });
 
         });
+
+
     });
 
 </script>
+<style>
+    #longDesc{
+        resize:none;
+        height: 300px !important;
+    }
+    #location{
+        margin-top: 100px !important;
+    }
+    #btnSub{
+        margin-top: 100px !important;
+    }
+</style>
+
 <div style="width:100%" id="index">
 	<div data-role="header" style="text-align:center; background-color: #201d1d; color: #fff;">
 		<h1>Ec Shlirë</h1>
 	</div>
     <div style="height:5px; background-color: #9C1A1C !important;"></div>
 	<br><br>
+    <div class="form-group harassTypes">
+        <label class="control-label col-xs-6 left" style="color: white;">How did it happen?</label><label class="control-label col-xs-6" align="right" style="color: white;">Step 4/4</label>
+    </div>
 	<div data-role="content" style="text-align:center;">
-        {{harassType}}
         <form class="form-horizontal" role="form">
             <input type="hidden" id="location" value="{{location}}">
             <input type="hidden" id="harassmentType" value="">
-            <div class="form-group">
-                <div class="col-lg-10">
-                    <textarea id="longDesc" class="form-control" name="longDesc" rows="30" cols="17" placeholder="Long Description"></textarea>
-                </div>
+            <div class="row col-lg-10" style="height: 250px !important;">
+                <textarea id="longDesc" class="field span12 text" name="longDesc" placeholder="Story..."></textarea>
             </div>
-            <div class="form-group">
-                <div class="col-lg-offset-2 col-lg-10">
-                    <button type="button" id="uploadPic" class="btn btn-success">Upload Photo</button>
+            <br><br>
+            <div class="form-group" id="location">
+                 <div class="btn-group col-xs-3" data-toggle="buttons">
+                    <div class="btn btn-default col-xs-6">
+                        <input type="radio" name="options" id="option1" checked> Yes
+                     </div>
+                    <div class="btn btn-default col-xs-6">
+                        <input type="radio" name="options" id="option1"> No
+                     </div>
                 </div>
+                <label class="col-xs-8 text-left control-label" style="padding-top: 5px !important; color: white;">Submit My Location</label>
             </div>
-            <div class="form-group">
+
+            <div class="form-group" id="btnSub">
                 <div class="col-lg-offset-2 col-lg-10">
                     <button type="button" id="reportButton" class="btn btn-success">Report!</button>
                 </div>
