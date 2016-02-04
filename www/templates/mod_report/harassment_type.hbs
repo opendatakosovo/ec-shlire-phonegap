@@ -9,20 +9,68 @@
         });
     });
 </script>
-<div style="width:100%">
-	<div data-role="header" style="text-align:center; background-color: #1E1E1E; color: #fff;">
-		<h1>Ec Shlirë</h1>
-	</div>
-	<div style="height:10px; background-color: yellow;"></div>
-	<br>
-	<div data-role="content" class="harassTypes" style="text-align:center; margin-top:-10px;">
+<style>
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #201d1d !important;
+}
+.harassTypes, .harassTypes > div {
+    background-color: #2E2C2D !important;
+}
+.ui-page{
+    background-color: #2E2C2D !important;
+}
+</style>
+<div style="width:100%; background-color: #2E2C2D;">
+    <div class="row">
+        <a href="#settingsPage" class="col-xs-4 btn" style="background-color: #201d1d; color:white;">
+            Settings
+        </a>
+        <div data-role="header" class="col-xs-4" style="text-align:center; border: 0; background-color: #201d1d !important; color: #fff;">
+            <h1>Ec Shlirë</h1>
+        </div>
+        <a href="#" data-icon="back" class="col-xs-4 btn" style="background-color: #201d1d; color:white;">
+            <i class="glyphicon glyphicon-chevron-left"></i><b>Back</b>
+        </a>
+    </div>
+
+    <div style="height:5px; background-color: #9C1A1C !important;"></div>
+    <br>
+    <div class="form-group harassTypes">
+        <label class="control-label col-xs-6 left" style="color: white;">What happened?</label><label class="control-label col-xs-6" align="right" style="color: white;">Step 1/4</label>
+    </div>
+
+	<div data-role="content" class="row harassTypes" style="text-align:center; margin-top:-10px;">
         {{#each options}}
-        <div class="checkbox-wrapper" style="width:50%; float: left; ">
+        <div class="col-xs-3 checkbox-wrapper" style="height: 70%;">
             <input type="checkbox" name="{{ name }}"/>
-            <img style="width:75%; border: 0.1em dotted black;" id="{{ id }}" src="{{ image_url }}"/>
-            <h5>{{ name }}</h5>
+            <img class="img-responsive" style="width:75%;border: 0.1em dotted black;" id="{{ id }}" src="{{ image_url }}"/>
+            <h5 style="color: white;">{{ name }}</h5>
+        </div>
+        {{/each}}
+        {{#each options}}
+        <div class="col-xs-3 checkbox-wrapper" style="height: 70%;">
+            <input type="checkbox" name="{{ name }}"/>
+            <img class="img-responsive" style="width:75%;border: 0.1em dotted black;" id="{{ id }}" src="{{ image_url }}"/>
+            <h5 style="color: white;">{{ name }}</h5>
         </div>
         {{/each}}
 	</div>
-    <a type="button" class="btn btn-primary" href="#generateReport" id="continueBtn">Continue</a>
+    <div class="form-group harassTypes">
+        <div class="col-lg-offset-2 col-lg-10">
+            <a class="btn btn-default col-xs-offset-4 col-xs-4" href="#generateReport" id="continueBtn" style="border-color:white !important;color: white !important; background-color: #2E2C2D !important;">Continue</a>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="col-xs-4" style="">
+            <a class="btn" style="background-color: #201d1d; color:white;">112</a>
+        </div>
+        <div class="col-xs-offset-4 col-xs-4" style="">
+            <a class="btn" style="background-color: #201d1d; color:white;">Light</a>
+        </div>
+    </div>
 </div>

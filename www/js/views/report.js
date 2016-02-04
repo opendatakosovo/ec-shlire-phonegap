@@ -37,14 +37,20 @@ window.HarassmentTypeView = Backbone.View.extend({
       this.render();
     },
     render: function(){
-       var verbal = new Option({ name: "Verbal", id: "Verbal", image_url: "static/css/images/banner.png"});
+      var verbal = new Option({ name: "Verbal", id: "Verbal", image_url: "static/css/images/banner.png"});
       var stalking = new Option({ name: "Stalking", id: "Stalking", image_url: "static/css/images/banner.png"});
       var groping = new Option({ name: "Groping", id: "Groping", image_url: "static/css/images/banner.png"});
       var assault = new Option({ name: "Assault", id: "Assault", image_url: "static/css/images/banner.png"});
       var flashing = new Option({ name: "Flashing", id: "Flashing", image_url: "static/css/images/banner.png"});
       var racism = new Option({ name: "Racism", id: "Racism", image_url: "static/css/images/banner.png"});
+      var verbal_2 = new Option({ name: "Verbal", id: "Verbal", image_url: "static/css/images/banner.png"});
+      var stalking_2 = new Option({ name: "Stalking", id: "Stalking", image_url: "static/css/images/banner.png"});
+      var groping_2 = new Option({ name: "Groping", id: "Groping", image_url: "static/css/images/banner.png"});
+      var assault_2 = new Option({ name: "Assault", id: "Assault", image_url: "static/css/images/banner.png"});
+      var flashing_2 = new Option({ name: "Flashing", id: "Flashing", image_url: "static/css/images/banner.png"});
+      var racism_2 = new Option({ name: "Racism", id: "Racism", image_url: "static/css/images/banner.png"});
 
-      var myOptions = new Options([verbal, stalking, groping, assault, flashing, racism]);
+      var myOptions = new Options([verbal, stalking, groping, assault, flashing, racism, verbal_2, stalking_2, groping_2, assault_2, flashing_2, racism_2]);
 
       $(this.el).html(this.template({options: myOptions.toJSON()}));
       return this;
@@ -65,12 +71,5 @@ window.GenerateReportView = Backbone.View.extend({
       };
         $(this.el).html(this.template(session_data));
         return this;
-    }
-});
-
-window.SubmitFormView = Backbone.View.extend({
-  initialize: function(options){
-      var formData = new SendData();
-      formData.fetch({data:{course_name:"hello"},type:'POST' });
     }
 });

@@ -1,17 +1,16 @@
-<div style="width:100%">
-	<div data-role="header" style="text-align:center; background-color: #1E1E1E; color: #fff;">
+<div style="width:100%;">
+	<div data-role="header" style="text-align:center; margin:0; background-color: #201d1d; color: #fff;">
 		<h1>Ec Shlirë</h1>
 	</div>
-	<div style="height:10px; background-color: yellow;"></div>
+    <div style="height:5px;  margin:0; background-color: #9C1A1C !important;"></div>
 	<br>
-	<div data-role="content" style="text-align:center; margin-top:-10px;">
+	<div data-role="content" style="text-align:center; margin-top:-10px; background-color: #2E2C2D;">
 		{{#each options}}
 				<div style="width:50%; float: left; ">
 					<a href="#harassmentType" style="width:50%;">
 						<img class="image img-circle" style="width:75%; border: 0.1em dotted black;" id="{{ id }}" src="{{ image_url }}">
 						<h5>{{ name }}</h5>
 					</a>
-					<hr>
 				</div>
 		{{/each}}
 	</div>

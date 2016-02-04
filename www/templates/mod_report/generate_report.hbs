@@ -7,6 +7,10 @@
         $('#reportButton').click(function(){
             var harassType = localStorage.getItem('harassTypes');
             // Build Json
+            var dummy = {
+                "story": "My colleague gave me an awkward greeting in the morning, with excessive kisses and hugs.",
+                "type": ["Kissing", "Touching"]
+            };
             var data = {
                 profile_information: {
                     'anonymity': true
@@ -21,12 +25,12 @@
             // Execute post request to the API server
             $.ajax({
                 type: "POST",
-                url: "http://192.168.2.212:5000/api/harassment/save",
+                url: "http://ecshlire.com/api/harassment/report",
                 crossDomain: true,
                 beforeSend : function() {$.mobile.loading('show')},
                 complete   : function() {$.mobile.loading('hide')},
                 contentType: "application/json; charset=UTF-8", // charset is to properly retrieve special  characters
-                data: JSON.stringify(data),
+                data: JSON.stringify(dummy),
                 success: function(respData){
                     alert("Hoooorray!!!");
                 },
@@ -40,10 +44,10 @@
 
 </script>
 <div style="width:100%" id="index">
-	<div data-role="header" style="text-align:center; background-color: #1E1E1E; color: #fff;">
+	<div data-role="header" style="text-align:center; background-color: #201d1d; color: #fff;">
 		<h1>Ec Shlirë</h1>
 	</div>
-	<div style="height:10px; background-color: yellow;"></div>
+    <div style="height:5px; background-color: #9C1A1C !important;"></div>
 	<br><br>
 	<div data-role="content" style="text-align:center;">
         {{harassType}}

@@ -1,7 +1,8 @@
 <div>
     {{#each options}}
-        <a href="#{{this.id}}">
-            <img src="{{this.image_url}}" class="img-responsive" />
+        <a href="#{{link}}">
+            <img src="{{this.image_url}}" id="{{ this.id }}" class="img-responsive" />
         </a>
     {{/each}}
+    <a class="btn btn-default" href="#settingsPage">Settings</a>
 </div>
