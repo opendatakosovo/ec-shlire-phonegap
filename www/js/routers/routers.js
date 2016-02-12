@@ -5,6 +5,7 @@ var AppRouter = Backbone.Router.extend({
         "page1":"page1",
         "reportPg": "reportPg",
         "harassmentType": "harassmentType",
+        "perpetratorTypes": "perpetratorTypes",
         "generateReport": "generateReport",
         "submitForm": "submitForm",
         "settingsPage": "settingsPage",
@@ -38,6 +39,10 @@ var AppRouter = Backbone.Router.extend({
         this.changePage(new HarassmentTypeView());
     },
 
+    perpetratorTypes: function () {
+      this.changePage(new PerpetratorTypesView());
+    },
+
     generateReport:function () {
         this.changePage(new GenerateReportView());
     },
@@ -64,7 +69,7 @@ var AppRouter = Backbone.Router.extend({
         });
 
         $('body').append($(page.el));
-        var transition = "flip";
+        var transition = "slide";
 
         // We don't want to slide the first page
         if (this.firstPage) {

@@ -1,17 +1,38 @@
 <script>
     $(document).ready(function(){
         $('#continueBtn').click(function(){
-            var selected = [];
-            $('.harassTypes .checkbox-wrapper input:checked').each(function() {
-                selected.push($(this).attr('name'));
-            });
-            localStorage.setItem("harassTypes", selected);
+            localStorage.setItem("harassTypes", selected_array);
+        });
+
+        selected_array = [];
+
+        $(".btnImg").on("tap",function(){
+          var element_id = $(this).attr("id");
+          var element_name = $(this).attr("name");
+          var styling = $(this).attr("style");
+
+            if( styling != "width:85%;" ) {
+               $("#" + element_id).attr("style", "width:85%;");
+                // drop array's values is it is untapped
+                selected_array.splice( $.inArray(element_name, selected_array), 1);
+            }
+            else {
+               $("#" + element_id).css({
+                    "border-color": "#f91f61",
+                    "border-width":"3px",
+                    "border-style":"solid"
+                });
+
+                // populate array with values
+                selected_array.push(element_name);
+            }
+
         });
     });
 </script>
 <style>
 .footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
@@ -23,6 +44,9 @@
 }
 .ui-page{
     background-color: #2E2C2D !important;
+}
+.harassType:nth-child(4n+1){
+    clear:left
 }
 </style>
 <div style="width:100%; background-color: #2E2C2D;">
@@ -44,25 +68,17 @@
         <label class="control-label col-xs-6 left" style="color: white;">What happened?</label><label class="control-label col-xs-6" align="right" style="color: white;">Step 1/4</label>
     </div>
 
-	<div data-role="content" class="row harassTypes" style="text-align:center; margin-top:-10px;">
+	<div data-role="content" class="row harassTypes" id="harssments" style="text-align:center; margin-top:-10px;">
         {{#each options}}
-        <div class="col-xs-3 checkbox-wrapper" style="height: 70%;">
-            <input type="checkbox" name="{{ name }}"/>
-            <img class="img-responsive" style="width:75%;border: 0.1em dotted black;" id="{{ id }}" src="{{ image_url }}"/>
-            <h5 style="color: white;">{{ name }}</h5>
-        </div>
-        {{/each}}
-        {{#each options}}
-        <div class="col-xs-3 checkbox-wrapper" style="height: 70%;">
-            <input type="checkbox" name="{{ name }}"/>
-            <img class="img-responsive" style="width:75%;border: 0.1em dotted black;" id="{{ id }}" src="{{ image_url }}"/>
+        <div class="col-xs-3 harassType">
+            <img class="img-responsive btnImg" style="width:85%;" name="{{name}}" id="{{ id }}" src="{{ image_url }}"/>
             <h5 style="color: white;">{{ name }}</h5>
         </div>
         {{/each}}
 	</div>
     <div class="form-group harassTypes">
         <div class="col-lg-offset-2 col-lg-10">
-            <a class="btn btn-default col-xs-offset-4 col-xs-4" href="#generateReport" id="continueBtn" style="border-color:white !important;color: white !important; background-color: #2E2C2D !important;">Continue</a>
+            <a class="btn btn-default col-xs-offset-4 col-xs-4" href="#perpetratorTypes" id="continueBtn" style="border-color:white !important;color: white !important; background-color: #2E2C2D !important;">Continue</a>
         </div>
     </div>
     <div class="footer">

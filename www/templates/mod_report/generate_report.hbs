@@ -54,18 +54,26 @@
 <style>
     #longDesc{
         resize:none;
-        height: 300px !important;
+        height: 170px !important;
     }
     #location{
-        margin-top: 100px !important;
+        margin-top: 20px !important;
     }
     #btnSub{
-        margin-top: 100px !important;
+        margin-top: 30px !important;
     }
     #reportButton{
         border-color:white !important;
         color: white !important;
         background-color: #2E2C2D !important;
+    }
+    .footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      /* Set the fixed height of the footer here */
+      height: 60px;
+      background-color: #201d1d !important;
     }
 </style>
 
@@ -82,12 +90,11 @@
         <form class="form-horizontal" role="form">
             <input type="hidden" id="location" value="{{location}}">
             <input type="hidden" id="harassmentType" value="">
-            <div class="row col-lg-10" style="height: 250px !important;">
+            <div class="row col-lg-10">
                 <textarea id="longDesc" class="field span12 text" name="longDesc" placeholder="Story..."></textarea>
             </div>
-            <br><br>
             <div class="form-group" id="location">
-                 <div class="btn-group col-xs-3" data-toggle="buttons">
+                 <div class="btn-group col-xs-4" data-toggle="buttons">
                     <div class="btn btn-default col-xs-6">
                         <input type="radio" name="options" id="option1" checked> Yes
                      </div>
@@ -105,4 +112,12 @@
             </div>
         </form>
 	</div>
+    <div class="footer">
+        <div class="col-xs-4" style="">
+            <a class="btn" style="background-color: #201d1d; color:white;">112</a>
+        </div>
+        <div class="col-xs-offset-4 col-xs-4" style="">
+            <a class="btn" style="background-color: #201d1d; color:white;">Light</a>
+        </div>
+    </div>
 </div>
