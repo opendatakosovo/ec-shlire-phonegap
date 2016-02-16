@@ -1,0 +1,52 @@
+<script>
+    $(document).ready(function(){
+        $("li").click(function(){
+           window.location="#generateReport";
+           return false;
+        });
+
+    })
+</script>
+<style>
+    li:nth-child(odd) {
+        background:#403f3f;
+        border-color: #6e6e6e;
+    }
+    li:nth-child(even) {
+        background-color:#363636
+    }
+    #list{
+        padding: 0;
+        width: 100% !important;
+        height: 100%;
+        border: 0;
+        position: absolute;
+        overflow:hidden;
+        overflow-y: scroll;
+    }
+    .ui-page{
+        background-color: #363636 !important;
+    }
+    .list-group-item:hover{
+        background-color: #616060;
+        border-color: #c70c44;
+    }
+</style>
+<div class="main" style="width:100%;height: 18.7% !important">
+    <div style="height:5px; width:100%; background-color: #eb1a51 !important;"></div>
+    <br><br>
+    <div class="form-group prepetratorTypes">
+        <label class="control-label col-xs-6" style="color: white;text-align: left">Where did it happen?</label>
+        <label class="control-label col-xs-6" style="text-align:right; color: white;"><b>Step 3/4</b></label>
+    </div>
+    <br>
+    <div id="list">
+        <ul class="list-group" style="width:100% !important;">
+            {{#each options}}
+            <li class="list-group-item" style="width:100% !important;height: 40px !important;">
+                <label class="control-label" style="color: white;text-align: left">{{ name }}</label>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>

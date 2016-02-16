@@ -1,0 +1,72 @@
+<script>
+    $(document).ready(function(){
+
+         $.ajax({
+            type: "GET",
+            url: "http://192.168.2.213:3000//api/harassment-type/counts",
+            crossDomain: true,
+            beforeSend : function() {$.mobile.loading('show')},
+            complete   : function() {$.mobile.loading('hide')},
+            success: function(respData){
+                alert("Hoooorray!!!");
+                drawChart(respData);
+            },
+            error: function(error) {
+                alert(JSON.stringify(error));
+            }
+        });
+
+    });
+
+    function drawChart(dataSeries){
+        var config = {
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+            },
+            title: {
+                text: 'Counts of Harassment Types'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                        style: {
+                            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                        }
+                    }
+                }
+            },
+            series: [{
+                name: 'Brands',
+                colorByPoint: true,
+                data: dataSeries
+            }]
+        };
+
+       $('#chartDiv').highcharts(config);
+
+    }
+</script>
+<div style="width:100%">
+	<div data-role="header" style="text-align:center; background-color: #1E1E1E; color: #fff;">
+		<h1>Ec Shlirë</h1>
+	</div>
+	<div style="height:10px; background-color: yellow;"></div>
+	<br><br>
+	<div data-role="content" style="text-align:center;">
+        <a href="#" data-icon="back" style="width:50%;float: left;">
+            <i class="glyphicon glyphicon-chevron-left"></i><b>Back</b>
+        </a>
+        <br><br>
+        <div id="chartDiv" style="margin: 0 auto" class="col-md-6"></div>
+    </div>
+</div>
