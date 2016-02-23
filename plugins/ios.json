@@ -7,8 +7,20 @@
         "files": {}
     },
     "installed_plugins": {
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.ec.shlire"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "com.ec.shlire"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.ec.shlire"
+        },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
+            "PACKAGE_NAME": "com.ec.shlire"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "com.ec.shlire"
         }
     },
     "dependent_plugins": {}

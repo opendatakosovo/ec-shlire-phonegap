@@ -1,5 +1,6 @@
 node_modules
 www/lib
+platforms
 www/npm-debug.log
 .idea
 www/bower_components

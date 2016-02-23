@@ -7,8 +7,23 @@
         "files": {}
     },
     "installed_plugins": {
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.ec.shlire"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "com.ec.shlire"
+        },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.phonegap.example"
+            "PACKAGE_NAME": "com.ec.shlire"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.ec.shlire"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "com.ec.shlire"
+        },
+        "io.litehelpers.cordova.sqlite": {
+            "PACKAGE_NAME": "com.ec.shlire"
         }
     },
     "dependent_plugins": {}

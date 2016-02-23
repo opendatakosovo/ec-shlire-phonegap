@@ -1,53 +1,142 @@
 <script>
+
     $(document).ready(function(){
 
-        // Configure jquery to allow ajax requests through cross-domains
-        $.support.cors = true;
-        var country = localStorage.getItem('country');
-        var gender = localStorage.getItem('gender');
-        var ethnicity = localStorage.getItem('ethnicity');
-        var birthDay = localStorage.getItem('birthDay');
-        var region = localStorage.getItem('region');
-        var language = localStorage.getItem('language');
-        //alert([country, gender, ethnicity, birthDay, region, language].toString());
+        /******** Create Data Base Instance *******/
+        var myDB = window.sqlitePlugin.openDatabase({name: "mySQLite.db"});
+        myDB.transaction(function(transaction) {
+            transaction.executeSql('CREATE TABLE IF NOT EXISTS harassment_report (id integer primary key, title text, desc text)', [],
+            function(tx, result) {
+                alert("Table created successfully");
+            },
+            function(error) {
+                alert("Error occurred while creating the table.");
+            });
+        });
+
+
         $('#reportButton').click(function(){
-            var harassType = localStorage.getItem('harassTypes');
+
+            /******** Data Base Insert Query *******/
+//            var title = "endrit";
+//            var desc = "hello boy";
+//            myDB.transaction(function(transaction) {
+//                var executeQuery = "INSERT INTO harassment_report (title, desc) VALUES (?,?)";
+//                transaction.executeSql(
+//                    executeQuery,
+//                    [title,desc],
+//                    function(tx, result) {
+//                        alert('Inserted');
+//                    },
+//                    function(error){
+//                        alert('Error occurred');
+//                    }
+//                );
+//            });
+
+            /******** Data Base Query All Records *******/
+            queryDataFromDB(myDB);
+
+            /******** Build Harass. JSON Structure *******/
             // Build Json
             var dummy = {
                 "story": "My colleague gave me an awkward greeting in the morning, with excessive kisses and hugs.",
                 "type": ["Kissing", "Touching"]
             };
+
+            var harassType = localStorage.getItem('harassTypes');
+            var country = localStorage.getItem('country');
+            var gender = localStorage.getItem('gender');
+            var ethnicity = localStorage.getItem('ethnicity');
+            var birthDay = localStorage.getItem('birthDay');
+            var region = localStorage.getItem('region');
+            var language = localStorage.getItem('language');
+
             var data = {
-                profile_information: {
-                    'anonymity': true
-                },
-                description: $('#longDesc').val(),
-                harassment_type: harassType,
-                location: {
-                    harassment_location: $('#location').val(),
+                "timestamp": "",
+                "types": [],
+                "location" : "",
+                "perpetrator": "",
+                "perpetratorGender": "",
+                "story" : "This is the story of how I was harassed.",
+                "latitude": "",
+                "longitude": "",
+                "victim": {
+                    "country": "Kosovo",
+                    "region": "Ferizaj",
+                    "city": "Ferizaj",
+                    "nationality": "",
+                    "gender": "",
+                    "ethnicity": "",
+                    "birthday": "",
+                    "language": ""
                 }
             };
-
-            // Execute post request to the API server
-            $.ajax({
-                type: "POST",
-                url: "http://ecshlire.com/api/harassment/report",
-                crossDomain: true,
-                beforeSend : function() {$.mobile.loading('show')},
-                complete   : function() {$.mobile.loading('hide')},
-                contentType: "application/json; charset=UTF-8", // charset is to properly retrieve special  characters
-                data: JSON.stringify(dummy),
-                success: function(respData){
-                    alert("Hoooorray!!!");
-                },
-                error: function(error) {
-                    alert(JSON.stringify(error));
-                }
-            });
+            //executePOST(dummy);
 
         });
     });
 
+    /******** Data Base Query All Records *******/
+    function queryDataFromDB(myDB){
+        myDB.transaction(function(transaction) {
+            transaction.executeSql(
+                'SELECT * FROM harassment_report',
+                [],
+                function (tx, results) {
+                    var len = results.rows.length, i;
+                    alert(JSON.stringify(results.rows.item()));
+//                    for (i = 0; i < len; i++){
+//                        alert(results.rows.item(i).title+" "+results.rows.item(i).desc);
+//                    }
+                },
+                null
+            );
+        });
+    }
+
+    /******** Execute POST Request To API Server *******/
+    function executePOST(data){
+        // Configure jquery to allow ajax requests through cross-domains
+        $.support.cors = true;
+        $.ajax({
+            type: "POST",
+            url: "http://ecshlire.com/api/harassment/report",
+            crossDomain: true,
+            beforeSend : function() {$.mobile.loading('show')},
+            complete   : function() {$.mobile.loading('hide')},
+            contentType: "application/json; charset=UTF-8", // charset is to properly retrieve special  characters
+            data: JSON.stringify(dummy),
+            success: function(respData){
+                alert("Hoooorray!!!");
+            },
+            error: function(error) {
+                alert(JSON.stringify(error));
+            }
+        });
+    }
+
+    /******** Check Phone Connectivity *******/
+    function connection(){
+        var connectivity;
+        switch(navigator.network.connection.type){
+            case Connection.UNKNOWN:
+                connectivity = "true"; break;
+            case Connection.ETHERNET:
+                connectivity = "true"; break;
+            case Connection.WIFI:
+                connectivity = "true"; break;
+            case Connection.CELL_2G:
+                connectivity = "true"; break;
+            case Connection.CELL_3G:
+                connectivity = "true"; break;
+            case Connection.CELL_4G:
+                connectivity = "true"; break;
+            case Connection.NONE:
+                connectivity = "false"; break;
+        }
+        return connectivity;
+    }
 </script>
 <style>
     #longDesc{
@@ -66,17 +155,12 @@
         background-color: #2E2C2D !important;
     }
 </style>
-
-<div style="width:100%">
-	<div data-role="header" style="text-align:center; background-color: #201d1d; color: #fff;">
-		<h1>Ec Shlirë</h1>
-	</div>div>
+<div class="main" style="width:100%">
     <div style="height:5px; background-color: #9C1A1C !important;"></div>
-	<br><br>
     <div class="form-group harassTypes">
         <label class="control-label col-xs-6 left" style="color: white;">How did it happen?</label><label class="control-label col-xs-6" align="right" style="color: white;">Step 4/4</label>
     </div>
-	<data-role="content" style="text-align:center;"er;">
+	<div style="text-align:center;">
         <form class="form-horizontal" role="form">
             <input type="hidden" id="location" value="{{location}}">
             <input type="hidden" id="harassmentType" value="">
