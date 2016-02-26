@@ -38,7 +38,7 @@
             queryDataFromDB(myDB);
 
             /******** Build Harass. JSON Structure *******/
-            // Build Json
+            // Build JSON
             var dummy = {
                 "story": "My colleague gave me an awkward greeting in the morning, with excessive kisses and hugs.",
                 "type": ["Kissing", "Touching"]
@@ -86,9 +86,9 @@
                 function (tx, results) {
                     var len = results.rows.length, i;
                     alert(JSON.stringify(results.rows.item()));
-//                    for (i = 0; i < len; i++){
-//                        alert(results.rows.item(i).title+" "+results.rows.item(i).desc);
-//                    }
+                    for (i = 0; i < len; i++){
+                        alert(results.rows.item(i).title+" "+results.rows.item(i).desc);
+                    }
                 },
                 null
             );

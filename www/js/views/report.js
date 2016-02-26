@@ -4,19 +4,19 @@ window.LocationsView = Backbone.View.extend({
       this.render();
     },
     render: function(){
-      var home = new Option({ name: "Home", id: "Home", image_url: "static/css/images/banner.png"});
-      var work = new Option({ name: "Work", id: "Work", image_url: "static/css/images/banner.png"});
-      var school = new Option({ name: "School", id: "School", image_url: "static/css/images/banner.png"});
-      var public_space = new Option({ name: "Public Space", id: "Public Space", image_url: "static/css/images/banner.png"});
-      var public_transit = new Option({ name: "Public Transit", id: "Public Transit", image_url: "static/css/images/banner.png"});
-      var online = new Option({ name: "Online", id: "Online", image_url: "static/css/images/banner.png"});
-      var university = new Option({ name: "University", id: "University", image_url: "static/css/images/banner.png"});
-      var cafe = new Option({ name: "Cafe / Restaurant", id: "Cafe / Restaurant", image_url: "static/css/images/banner.png"});
-      var bar = new Option({ name: "Bar / Nightclub", id: "Bar / Nightclub", image_url: "static/css/images/banner.png"});
-      var street = new Option({ name: "Street", id: "Street", image_url: "static/css/images/banner.png"});
-      var store = new Option({ name: "Store", id: "Store", image_url: "static/css/images/banner.png"});
-      var gym = new Option({ name: "Gym/ Sports activities", id: "Gym/ Sports activities", image_url: "static/css/images/banner.png"});
-      var other = new Option({ name: "Other", id: "Other", image_url: "static/css/images/banner.png"});
+      var home = new Option({ name: "Home", id: "Home",});
+      var work = new Option({ name: "Work", id: "Work",});
+      var school = new Option({ name: "School", id: "School",});
+      var public_space = new Option({ name: "Public Space", id: "Public Space",});
+      var public_transit = new Option({ name: "Public Transit", id: "Public Transit",});
+      var online = new Option({ name: "Online", id: "Online",});
+      var university = new Option({ name: "University", id: "University",});
+      var cafe = new Option({ name: "Cafe / Restaurant", id: "Cafe / Restaurant",});
+      var bar = new Option({ name: "Bar / Nightclub", id: "Bar / Nightclub",});
+      var street = new Option({ name: "Street", id: "Street",});
+      var store = new Option({ name: "Store", id: "Store",});
+      var gym = new Option({ name: "Gym/ Sports activities", id: "Gym/ Sports activities",});
+      var other = new Option({ name: "Other", id: "Other",});
 
       var myOptions = new Options([bar, cafe, gym, home, online, other, public_space, public_transit, school, store, street, university, work ]);
 
@@ -58,27 +58,32 @@ window.PerpetratorTypesView = Backbone.View.extend({
     },
     render: function(){
 
-      var acquaintance = new Option({ name: "Acquaintance", id: "Acquaintance", image_url: "static/css/images/banner.png"});
-      var boss = new Option({ name: "Boss", id: "Boss", image_url: "static/css/images/banner.png"});
-      var client = new Option({ name: "Client / Customer", id: "Client / Customer", image_url: "static/css/images/banner.png"});
-      var coworker = new Option({ name: "Co-worker", id: "coworker", image_url: "static/css/images/banner.png"});
-      var family = new Option({ name: "Family Member", id: "Family Member", image_url: "static/css/images/banner.png"});
-      var friend = new Option({ name: "Friend", id: "Friend", image_url: "static/css/images/banner.png"});
-      var partner = new Option({ name: "Partner", id: "Partner", image_url: "static/css/images/banner.png"});
-      var public_official = new Option({ name: "Public Official", id: "Public Official", image_url: "static/css/images/banner.png"});
-      var shopkeeper = new Option({ name: "Shopkeeper", id: "Shopkeeper", image_url: "static/css/images/banner.png"});
-      var stranger = new Option({ name: "Stranger", id: "Stranger", image_url: "static/css/images/banner.png"});
-      var teacher = new Option({ name: "Teacher / Professor", id: "Teacher / Professor", image_url: "static/css/images/banner.png"});
-      var waiter = new Option({ name: "Waiter", id: "Waiter", image_url: "static/css/images/banner.png"});
-      var other = new Option({ name: "Other", id: "Other", image_url: "static/css/images/banner.png"});
+      var acquaintance = new Option({ name: "Acquaintance", id: "Acquaintance"});
+      var boss = new Option({ name: "Boss", id: "Boss"});
+      var client = new Option({ name: "Client / Customer", id: "Client / Customer"});
+      var coworker = new Option({ name: "Co-worker", id: "coworker"});
+      var family = new Option({ name: "Family Member", id: "Family Member"});
+      var friend = new Option({ name: "Friend", id: "Friend"});
+      var partner = new Option({ name: "Partner", id: "Partner"});
+      var public_official = new Option({ name: "Public Official", id: "Public Official"});
+      var shopkeeper = new Option({ name: "Shopkeeper", id: "Shopkeeper"});
+      var stranger = new Option({ name: "Stranger", id: "Stranger"});
+      var teacher = new Option({ name: "Teacher / Professor", id: "Teacher / Professor"});
+      var waiter = new Option({ name: "Waiter", id: "Waiter"});
+      var other = new Option({ name: "Other", id: "Other"});
 
-      var myOptions = new Options([
+      var male = new Option({ name: "Male", id: "Male",  image_url: "static/img/icons/male.png"});
+      var female = new Option({ name: "Female", id: "Female",  image_url: "static/img/icons/female.png"});
+
+      var gender = new Options([male, female]);
+
+      var perpatretorOptions = new Options([
         acquaintance, boss, client, coworker, family,
         friend, partner, public_official, shopkeeper,
         stranger, teacher, waiter, other
       ]);
 
-      $(this.el).html(this.template({options: myOptions.toJSON()}));
+      $(this.el).html(this.template({options: perpatretorOptions.toJSON(), genderOptions: gender.toJSON()}));
       return this;
     }
 });

@@ -2,7 +2,41 @@
     $(document).ready(function(){
         $("li").click(function(){
            window.location="#locationTypes";
+            var name = $(this).attr('name');
+
            return false;
+        });
+
+        $(".btnImg").on("tap",function(){
+            var element_id = $(this).attr("id");
+            var element_name = $(this).attr("name");
+            var img_source = $("#" + element_id).attr("src");
+
+            if( $("#" + element_id).hasClass("selected") ) {
+
+                // remove class
+                $("#" + element_id).removeClass("selected");
+
+                // change background
+                var new_img_src = img_source.replace('_active.png', '.png');
+                $("#" + element_id).attr("src", new_img_src);
+
+                // unset btn values on its untap event
+                localStorage.setItem("perpetratorGender", "");
+
+            }
+            else {
+                // Add class to element
+                $("#" + element_id).addClass("selected");
+
+               // change image source
+               var new_img_src = img_source.replace('.png', '_active.png');
+               $("#" + element_id).attr("src", new_img_src);
+
+                // populate array with values
+                localStorage.setItem("perpetratorGender", element_name);
+            }
+
         });
 
     })
@@ -39,11 +73,19 @@
         <label class="control-label col-xs-6" style="color: white;text-align: left">Who did it?</label>
         <label class="control-label col-xs-6" style="text-align:right; color: white;"><b>Step 2/4</b></label>
     </div>
+    <hr>
+    <div class="row" style="text-align:center;">
+        {{#each genderOptions}}
+        <div class="col-xs-6">
+            <img class="img-responsive btnImg" style="border-style:none !important;" name="{{name}}" id="{{ id }}" src="{{ image_url }}"/>
+        </div>
+        {{/each}}
+	</div>
     <br>
     <div id="list">
         <ul class="list-group" style="width:100% !important;">
             {{#each options}}
-            <li class="list-group-item" style="width:100% !important;height: 40px !important;">
+            <li class="list-group-item" style="width:100% !important;height: 40px !important;" name="{{ name }}">
                 <label class="control-label" style="color: white;text-align: left">{{ name }}</label>
             </li>
             {{/each}}
